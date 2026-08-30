@@ -5,7 +5,9 @@ import Login from "./Pages/Public/Login";
 import Register from "./Pages/Public/Register";
 import RequiredInfo from "./Pages/Onboarding/RequiredInfo";
 import AdditionalInformation from "./Pages/Onboarding/AdditionalInformation";
-
+import Dashboard from "./Pages/User/Dasboard";
+import SchoolDetails from "./Pages/User/SchoolDetails";
+import JobDetails from "./Pages/Public/JobDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +17,16 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route 
+        path="/schools/:id/jobs/:jobId"
+        element={<JobDetails/>}
+        />
+
+        <Route 
+        path="/schools/:id"
+        element={<SchoolDetails/>}
+        />
 
         <Route
           path="/onboarding/required"
