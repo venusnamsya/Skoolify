@@ -13,6 +13,8 @@ import Settings from "./Pages/User/Settings";
 import Profile from "./Pages/User/Profile";
 import AdminVacancy from "./Pages/Admin/AdminVacancy";
 import AdminApplications from "./Pages/Admin/AdminApplications";
+import AdminSettings from "./Pages/Admin/AdminSettings";
+import AdminProfile from "./Pages/Admin/AdminProfile";
 
 function App() {
   return (
@@ -24,6 +26,16 @@ function App() {
 
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard/>}/>
+
+        <Route 
+        path="admin-profile"
+        element={<AdminProfile/>}
+        />
+        <Route
+        path="admin-settings"
+        element={<AdminSettings/>}
+        />
+
         <Route
         path="admin-applications"
         element={<AdminApplications/>}

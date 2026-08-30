@@ -152,7 +152,7 @@ function AdminDashboard() {
     },
   ];
 
-  // Prototype vacancies for now
+ 
   const vacancies = [
     {
       title: "Mathematics Teacher",
@@ -208,30 +208,30 @@ function AdminDashboard() {
               <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-blue-600" />
             </button>
 
-            {/* Profile */}
+           
             <Link
-              to="/admin/profile"
+              to="/admin-profile"
               className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 sm:flex"
             >
               <UserCircle size={19} />
               Profile
             </Link>
 
-            {/* Settings */}
+           
             <Link
-              to="/admin/settings"
+              to="/admin-settings"
               className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 md:flex"
             >
               <Settings size={18} />
               Settings
             </Link>
 
-            {/* Institution Avatar */}
+           
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">
               {institutionInitial}
             </div>
 
-            {/* Logout */}
+          
             <button
               type="button"
               onClick={handleLogout}
