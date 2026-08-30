@@ -181,7 +181,7 @@ function AdminDashboard() {
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
 
-          {/* LOGO */}
+         
           <Link
             to="/admin-dashboard"
             className="flex items-center gap-2.5"
@@ -605,7 +605,7 @@ function AdminDashboard() {
                 </Link>
 
                 <Link
-                  to="/admin/profile"
+                  to="/admin-profile"
                   className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
                 >
                   <UserCircle size={18} />
@@ -613,7 +613,7 @@ function AdminDashboard() {
                 </Link>
 
                 <Link
-                  to="/admin/settings"
+                  to="/admin-settings"
                   className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
                 >
                   <Settings size={18} />

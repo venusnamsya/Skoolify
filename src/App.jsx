@@ -28,16 +28,16 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
 
         <Route 
-        path="admin-profile"
+        path="/admin-profile"
         element={<AdminProfile/>}
         />
         <Route
-        path="admin-settings"
+        path="/admin-settings"
         element={<AdminSettings/>}
         />
 
         <Route
-        path="admin-applications"
+        path="/admin-applications"
         element={<AdminApplications/>}
         />
 
