@@ -4,6 +4,7 @@ import LandingPage from "./Pages/Public/LandingPage";
 import Login from "./Pages/Public/Login";
 import Register from "./Pages/Public/Register";
 import RequiredInfo from "./Pages/Onboarding/RequiredInfo";
+import AdditionalInformation from "./Pages/Onboarding/AdditionalInformation";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route
           path="/onboarding/required"
           element={<RequiredInfo />}
+        />
+        <Route 
+        path="onboarding/additional"
+        element={<AdditionalInformation/>}
         />
       </Routes>
     </BrowserRouter>
