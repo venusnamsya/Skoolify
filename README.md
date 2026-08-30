@@ -1,16 +1,63 @@
-# React + Vite
+# Skoolify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Skoolify is a school discovery and opportunity platform that connects parents, students and schools in one place.
 
-Currently, two official plugins are available:
+The idea behind the project is to make it easier for parents and students to find schools, check available vacancies, view school information and request school visits. Schools can also have their own dashboard where they can manage vacancies and applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+### For Parents and Students
+- Create an account and sign in
+- Search for schools
+- Filter schools by location
+- View school information
+- View available vacancies
+- Save schools
+- Keep track of school visit bookings
+- Manage profile information and settings
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### For Schools
+- Create a school account
+- Access a separate admin dashboard
+- View school statistics
+- Post and manage vacancies
+- View applications
+- Manage school profile
+- Access school settings
+- View school verification status
 
-## Expanding the ESLint configuration
+## Authentication
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Firebase Authentication is used for user registration and login.
+
+User information is stored in Firebase Firestore. Different account types are assigned different roles so that parents/students and schools can access their respective dashboards.
+
+## Technologies Used
+
+- React
+- JavaScript
+- Tailwind CSS
+- Firebase Authentication
+- Firebase Firestore
+- React Router
+- Lucide React
+- Vercel
+
+## Project Structure
+
+The project is separated into different pages and components for the landing page, authentication, user dashboard and school administration dashboard.
+
+The application uses React Router to move between the different pages.
+
+## Getting Started
+
+To run the project locally:
+
+1. Clone the repository.
+
+2. Open the project folder in VS Code.
+
+3. Install the dependencies:
+
+```bash
+npm install
