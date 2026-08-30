@@ -11,6 +11,8 @@ import JobDetails from "./Pages/Public/JobDetails";
 import AdminDashboard from "./Pages/Admin/AdminDashboard";
 import Settings from "./Pages/User/Settings";
 import Profile from "./Pages/User/Profile";
+import AdminVacancy from "./Pages/Admin/AdminVacancy";
+import AdminApplications from "./Pages/Admin/AdminApplications";
 
 function App() {
   return (
@@ -21,7 +23,16 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard/>}/>npm run dev
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route
+        path="admin-applications"
+        element={<AdminApplications/>}
+        />
+
+        <Route
+         path="/admin-vacancy"
+         element={<AdminVacancy/>}
+        />
 
         <Route
         path="/settings"

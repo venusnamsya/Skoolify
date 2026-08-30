@@ -280,7 +280,7 @@ function AdminDashboard() {
           </div>
 
           <Link
-            to="/admin/vacancies/new"
+            to="/admin-vacancy"
             className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
           >
             <Plus size={18} />
@@ -289,7 +289,7 @@ function AdminDashboard() {
 
         </section>
 
-        {/* STATISTICS */}
+       
         <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           {stats.map((stat) => {
@@ -321,13 +321,13 @@ function AdminDashboard() {
 
         </section>
 
-        {/* MAIN GRID */}
+     
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_380px]">
 
           {/* LEFT */}
           <div className="space-y-6">
 
-            {/* RECENT APPLICATIONS */}
+            
             <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
 
               <div className="flex items-center justify-between border-b border-slate-100 p-6">
@@ -400,7 +400,7 @@ function AdminDashboard() {
 
             </section>
 
-            {/* VACANCIES */}
+            
             <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
 
               <div className="flex items-center justify-between border-b border-slate-100 p-6">
@@ -470,10 +470,10 @@ function AdminDashboard() {
 
           </div>
 
-          {/* RIGHT */}
+       
           <aside className="space-y-6">
 
-            {/* SCHOOL PROFILE */}
+            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <div className="flex items-center gap-3">
@@ -536,7 +536,7 @@ function AdminDashboard() {
 
             </section>
 
-            {/* VERIFICATION */}
+            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <div className="flex items-center gap-3">
@@ -579,7 +579,7 @@ function AdminDashboard() {
 
             </section>
 
-            {/* QUICK ACTIONS */}
+            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <h2 className="font-extrabold text-slate-900">
@@ -589,7 +589,7 @@ function AdminDashboard() {
               <div className="mt-4 space-y-2">
 
                 <Link
-                  to="/admin/vacancies/new"
+                  to="/admin-vacancy"
                   className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
                 >
                   <Plus size={18} />
@@ -597,7 +597,7 @@ function AdminDashboard() {
                 </Link>
 
                 <Link
-                  to="/admin/applications"
+                  to="/admin-applications"
                   className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
                 >
                   <ClipboardList size={18} />
