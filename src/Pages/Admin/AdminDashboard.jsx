@@ -1,0 +1,501 @@
+import {
+  Bell,
+  BriefcaseBusiness,
+  Building2,
+  CheckCircle2,
+  ClipboardList,
+  GraduationCap,
+  MapPin,
+  Plus,
+  Settings,
+  Users,
+  XCircle,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+function AdminDashboard() {
+  // Prototype data
+  const school = {
+    name: "Green Valley Academy",
+    location: "Westlands, Nairobi",
+    status: "Verified",
+  };
+
+  const stats = [
+    {
+      title: "Student Vacancies",
+      value: "12",
+      icon: GraduationCap,
+      iconStyle: "bg-blue-50 text-blue-600",
+    },
+    {
+      title: "Job Vacancies",
+      value: "5",
+      icon: BriefcaseBusiness,
+      iconStyle: "bg-purple-50 text-purple-600",
+    },
+    {
+      title: "Applications",
+      value: "28",
+      icon: ClipboardList,
+      iconStyle: "bg-green-50 text-green-600",
+    },
+    {
+      title: "Visit Requests",
+      value: "8",
+      icon: Users,
+      iconStyle: "bg-orange-50 text-orange-600",
+    },
+  ];
+
+  const recentApplications = [
+    {
+      name: "Mary Wanjiku",
+      type: "Student Admission",
+      date: "Today",
+      status: "Pending",
+    },
+    {
+      name: "James Otieno",
+      type: "Mathematics Teacher",
+      date: "Yesterday",
+      status: "Reviewing",
+    },
+    {
+      name: "Amina Hassan",
+      type: "Grade 7 Admission",
+      date: "2 days ago",
+      status: "Pending",
+    },
+  ];
+
+  const vacancies = [
+    {
+      title: "Mathematics Teacher",
+      type: "Job",
+      applications: 6,
+      status: "Active",
+    },
+    {
+      title: "ICT Teacher",
+      type: "Job",
+      applications: 4,
+      status: "Active",
+    },
+    {
+      title: "Grade 7 Admission",
+      type: "Student",
+      applications: 10,
+      status: "Active",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+
+      {/* NAVBAR */}
+      <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
+        <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
+
+          <Link to="/" className="flex items-center gap-2.5">
+
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+              S
+            </span>
+
+            <span className="text-xl font-extrabold text-slate-900">
+              Skool<span className="text-blue-600">ify</span>
+            </span>
+
+          </Link>
+
+          <div className="flex items-center gap-3">
+
+            <button
+              type="button"
+              className="relative flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 hover:text-blue-600"
+            >
+              <Bell size={19} />
+
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-blue-600" />
+            </button>
+
+            <button
+              type="button"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white"
+            >
+              G
+            </button>
+
+          </div>
+
+        </div>
+      </header>
+
+      {/* PAGE */}
+      <main className="mx-auto max-w-[1400px] px-[5%] py-8">
+
+        {/* WELCOME */}
+        <section className="flex flex-col justify-between gap-5 md:flex-row md:items-center">
+
+          <div>
+
+            <p className="text-sm font-semibold text-blue-600">
+              SCHOOL ADMINISTRATION
+            </p>
+
+            <h1 className="mt-1 text-3xl font-extrabold text-slate-900">
+              Welcome, Green Valley Academy 👋
+            </h1>
+
+            <div className="mt-2 flex items-center gap-2 text-sm text-slate-500">
+
+              <MapPin size={16} className="text-blue-600" />
+
+              {school.location}
+
+              <span className="ml-2 flex items-center gap-1 rounded-full bg-green-50 px-2.5 py-1 text-xs font-bold text-green-600">
+                <CheckCircle2 size={13} />
+                {school.status}
+              </span>
+
+            </div>
+
+          </div>
+
+          <Link
+            to="/admin/vacancies/new"
+            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+          >
+            <Plus size={18} />
+            Post Vacancy
+          </Link>
+
+        </section>
+
+        {/* STATISTICS */}
+        <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          {stats.map((stat) => {
+
+            const Icon = stat.icon;
+
+            return (
+              <div
+                key={stat.title}
+                className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
+              >
+
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${stat.iconStyle}`}
+                >
+                  <Icon size={21} />
+                </div>
+
+                <p className="mt-4 text-xs font-semibold text-slate-400">
+                  {stat.title.toUpperCase()}
+                </p>
+
+                <p className="mt-1 text-2xl font-extrabold text-slate-900">
+                  {stat.value}
+                </p>
+
+              </div>
+            );
+          })}
+
+        </section>
+
+        {/* MAIN GRID */}
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_380px]">
+
+          {/* LEFT */}
+          <div className="space-y-6">
+
+            {/* RECENT APPLICATIONS */}
+            <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
+
+              <div className="flex items-center justify-between border-b border-slate-100 p-6">
+
+                <div>
+
+                  <h2 className="text-xl font-extrabold text-slate-900">
+                    Recent Applications
+                  </h2>
+
+                  <p className="mt-1 text-sm text-slate-500">
+                    Review recent applications received by your school.
+                  </p>
+
+                </div>
+
+                <Link
+                  to="/admin/applications"
+                  className="text-sm font-bold text-blue-600 hover:underline"
+                >
+                  View all
+                </Link>
+
+              </div>
+
+              <div className="divide-y divide-slate-100">
+
+                {recentApplications.map((application) => (
+
+                  <div
+                    key={application.name}
+                    className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between"
+                  >
+
+                    <div className="flex items-center gap-3">
+
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 font-bold text-blue-600">
+                        {application.name.charAt(0)}
+                      </div>
+
+                      <div>
+
+                        <p className="text-sm font-bold text-slate-800">
+                          {application.name}
+                        </p>
+
+                        <p className="mt-1 text-xs text-slate-500">
+                          {application.type}
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                    <div className="flex items-center gap-4">
+
+                      <span className="text-xs text-slate-400">
+                        {application.date}
+                      </span>
+
+                      <span className="rounded-full bg-orange-50 px-3 py-1.5 text-xs font-bold text-orange-600">
+                        {application.status}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+            {/* VACANCIES */}
+            <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
+
+              <div className="flex items-center justify-between border-b border-slate-100 p-6">
+
+                <div>
+
+                  <h2 className="text-xl font-extrabold text-slate-900">
+                    Your Vacancies
+                  </h2>
+
+                  <p className="mt-1 text-sm text-slate-500">
+                    Manage vacancies currently posted by your school.
+                  </p>
+
+                </div>
+
+                <Link
+                  to="/admin/vacancies"
+                  className="text-sm font-bold text-blue-600 hover:underline"
+                >
+                  Manage
+                </Link>
+
+              </div>
+
+              <div className="divide-y divide-slate-100">
+
+                {vacancies.map((vacancy) => (
+
+                  <div
+                    key={vacancy.title}
+                    className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center"
+                  >
+
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+
+                      {vacancy.type === "Job" ? (
+                        <BriefcaseBusiness size={20} />
+                      ) : (
+                        <GraduationCap size={20} />
+                      )}
+
+                    </div>
+
+                    <div className="flex-1">
+
+                      <h3 className="text-sm font-bold text-slate-800">
+                        {vacancy.title}
+                      </h3>
+
+                      <p className="mt-1 text-xs text-slate-500">
+                        {vacancy.type} vacancy · {vacancy.applications}{" "}
+                        applications
+                      </p>
+
+                    </div>
+
+                    <span className="rounded-full bg-green-50 px-3 py-1.5 text-xs font-bold text-green-600">
+                      {vacancy.status}
+                    </span>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+          </div>
+
+          {/* RIGHT */}
+          <aside className="space-y-6">
+
+            {/* SCHOOL PROFILE */}
+            <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+
+              <div className="flex items-center gap-3">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                  <Building2 size={23} />
+                </div>
+
+                <div>
+
+                  <h2 className="font-extrabold text-slate-900">
+                    School Profile
+                  </h2>
+
+                  <p className="mt-1 text-xs text-slate-500">
+                    Manage your school's information
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="mt-5 space-y-3 text-sm">
+
+                <div className="flex items-center gap-2 text-slate-500">
+                  <MapPin size={16} className="text-blue-600" />
+                  {school.location}
+                </div>
+
+                <div className="flex items-center gap-2 text-green-600">
+                  <CheckCircle2 size={16} />
+                  Verified school
+                </div>
+
+              </div>
+
+              <Link
+                to="/admin/profile"
+                className="mt-5 block w-full rounded-xl border border-slate-200 py-3 text-center text-sm font-bold text-slate-700 hover:border-blue-200 hover:text-blue-600"
+              >
+                Edit School Profile
+              </Link>
+
+            </section>
+
+            {/* VERIFICATION */}
+            <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+
+              <div className="flex items-center gap-3">
+
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-green-600">
+                  <CheckCircle2 size={21} />
+                </div>
+
+                <div>
+
+                  <h2 className="font-extrabold text-slate-900">
+                    Verification
+                  </h2>
+
+                  <p className="mt-1 text-xs text-slate-500">
+                    School verification status
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="mt-5 rounded-xl bg-green-50 p-4">
+
+                <p className="text-sm font-bold text-green-700">
+                  ✓ School Verified
+                </p>
+
+                <p className="mt-1 text-xs leading-5 text-green-600">
+                  Your school profile has been verified by the Skoolify
+                  administration.
+                </p>
+
+              </div>
+
+              <p className="mt-4 text-xs leading-5 text-slate-400">
+                Future versions will allow administrators to review school
+                documents and approve verification requests.
+              </p>
+
+            </section>
+
+            {/* QUICK ACTIONS */}
+            <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+
+              <h2 className="font-extrabold text-slate-900">
+                Quick Actions
+              </h2>
+
+              <div className="mt-4 space-y-2">
+
+                <Link
+                  to="/admin/vacancies/new"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                >
+                  <Plus size={18} />
+                  Post a Vacancy
+                </Link>
+
+                <Link
+                  to="/admin/applications"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                >
+                  <ClipboardList size={18} />
+                  View Applications
+                </Link>
+
+                <Link
+                  to="/admin/settings"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                >
+                  <Settings size={18} />
+                  Settings
+                </Link>
+
+              </div>
+
+            </section>
+
+          </aside>
+
+        </div>
+
+      </main>
+
+    </div>
+  );
+}
+
+export default AdminDashboard;

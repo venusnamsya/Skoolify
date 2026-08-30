@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="relative z-50 flex h-[78px] w-full items-center justify-between border-b border-slate-100 bg-white px-[5%] lg:px-[7%]">
       
-      {/* Logo */}
+      
       <Link
         to="/"
         className="flex items-center gap-2.5 text-[22px] font-extrabold text-slate-900"
@@ -14,11 +14,11 @@ function Navbar() {
         </span>
 
         <span>
-          School<span className="text-blue-600">Find</span>
+          Skool<span className="text-blue-600">ify</span>
         </span>
       </Link>
 
-      {/* Navigation */}
+     
       <div className="hidden items-center gap-8 text-sm text-slate-500 md:flex">
         <a
           href="#how-it-works"
@@ -42,7 +42,7 @@ function Navbar() {
         </a>
       </div>
 
-      {/* Actions */}
+      
       <div className="flex items-center gap-4 sm:gap-6">
         <Link
           to="/login"

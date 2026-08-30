@@ -39,16 +39,14 @@ function LandingPage() {
     <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
 
-      {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
         
-        {/* Decorative circles */}
         <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-blue-100/60 blur-3xl" />
         <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-100/50 blur-3xl" />
 
         <div className="relative mx-auto flex min-h-[650px] max-w-[1400px] items-center justify-between gap-16 px-[5%] py-20 lg:px-[7%] lg:py-[85px]">
 
-          {/* HERO TEXT */}
+          
           <div className="max-w-[600px]">
             
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-100 px-3.5 py-2 text-xs font-bold text-blue-600">
@@ -68,7 +66,6 @@ function LandingPage() {
               fee structures and more — all in one place.
             </p>
 
-            {/* Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/register"
@@ -86,7 +83,7 @@ function LandingPage() {
               </a>
             </div>
 
-            {/* STATS */}
+         
             <div className="mt-12 flex flex-wrap gap-10">
               <div>
                 <strong className="block text-[22px] font-extrabold">
@@ -117,10 +114,10 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* HERO VISUAL */}
+       
           <div className="relative hidden h-[450px] w-[470px] shrink-0 lg:block">
 
-            {/* Main School Card */}
+          
             <div className="absolute left-[70px] top-[45px] w-[330px] overflow-hidden rounded-[18px] bg-white shadow-[0_20px_50px_rgba(35,65,110,0.13)]">
               
               <div className="flex h-[205px] items-center justify-center bg-blue-100 text-[80px]">
@@ -147,7 +144,7 @@ function LandingPage() {
               </div>
             </div>
 
-            {/* Vacancy Floating Card */}
+            
             <div className="absolute right-0 top-5 flex items-center gap-2.5 rounded-xl bg-white p-3.5 shadow-[0_12px_35px_rgba(35,65,110,0.14)]">
               <div className="flex h-[38px] w-[38px] items-center justify-center rounded-lg bg-blue-50">
                 🎓
@@ -164,7 +161,7 @@ function LandingPage() {
               </div>
             </div>
 
-            {/* Location Floating Card */}
+           
             <div className="absolute bottom-[35px] left-[5px] flex items-center gap-2.5 rounded-xl bg-white p-3.5 shadow-[0_12px_35px_rgba(35,65,110,0.14)]">
               <div className="flex h-[38px] w-[38px] items-center justify-center rounded-lg bg-blue-50">
                 📍
@@ -184,7 +181,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* FEATURES */}
+     
       <section
         id="how-it-works"
         className="bg-white px-[5%] py-[90px] lg:px-[7%]"
@@ -229,7 +226,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* ABOUT */}
+     
       <section
         id="about"
         className="bg-slate-50 px-[5%] py-[100px] lg:px-[7%]"
@@ -304,7 +301,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      
       <section className="bg-blue-600 px-6 py-20 text-center text-white">
         <h2 className="text-3xl font-extrabold sm:text-4xl">
           Ready to find your next opportunity?
@@ -322,12 +319,12 @@ function LandingPage() {
         </Link>
       </section>
 
-      {/* FOOTER */}
+      
       <footer className="bg-slate-950 px-[5%] py-8 text-slate-400 lg:px-[7%]">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row sm:items-center">
           <div>
             <p className="text-lg font-extrabold text-white">
-              School<span className="text-blue-500">Find</span>
+              Skool<span className="text-blue-500">ify</span>
             </p>
 
             <p className="mt-1.5 text-xs">
@@ -336,7 +333,7 @@ function LandingPage() {
           </div>
 
           <p className="text-xs">
-            © 2026 SchoolFind. All rights reserved.
+            © 2026 Skoolify. All rights reserved.
           </p>
         </div>
       </footer>
