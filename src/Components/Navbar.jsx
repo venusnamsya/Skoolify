@@ -9,12 +9,12 @@ function Navbar() {
         to="/"
         className="flex items-center gap-2.5 text-[22px] font-extrabold text-slate-900"
       >
-        <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-blue-600 font-extrabold text-white">
+        <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-[#172554] font-extrabold text-white">
           S
         </span>
 
         <span>
-          Skool<span className="text-blue-600">ify</span>
+          Skool<span className="text-[#ff6b5f]">ify</span>
         </span>
       </Link>
 
@@ -53,7 +53,7 @@ function Navbar() {
 
         <Link
           to="/register"
-          className="rounded-[9px] bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 hover:-translate-y-0.5"
+          className="rounded-[9px] bg-[#f47c68] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 hover:-translate-y-0.5"
         >
           Get Started
         </Link>

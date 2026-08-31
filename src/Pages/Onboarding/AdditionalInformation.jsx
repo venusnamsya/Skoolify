@@ -21,7 +21,6 @@ function AdditionalInfo() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Prototype: save information temporarily
     localStorage.setItem(
       "skoolifyProfile",
       JSON.stringify(formData)
@@ -36,18 +35,17 @@ function AdditionalInfo() {
 
   return (
     <div className="min-h-screen bg-slate-50 px-6 py-10">
-
-      {/* HEADER */}
       <div className="mx-auto max-w-2xl">
 
+        {/* HEADER */}
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] font-bold text-white">
               S
             </div>
 
-            <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+            <span className="text-xl font-extrabold text-[#0F172A]">
+              Skool<span className="text-[#FF6B5F]">ify</span>
             </span>
           </div>
 
@@ -58,16 +56,16 @@ function AdditionalInfo() {
 
         {/* PROGRESS */}
         <div className="mb-8 h-2 overflow-hidden rounded-full bg-slate-200">
-          <div className="h-full w-full rounded-full bg-blue-600" />
+          <div className="h-full w-full rounded-full bg-[#FF6B5F]" />
         </div>
 
         {/* HEADING */}
         <div className="mb-8">
-          <p className="text-xs font-extrabold tracking-[1.5px] text-blue-600">
+          <p className="text-xs font-extrabold tracking-[1.5px] text-[#FF6B5F]">
             ALMOST THERE
           </p>
 
-          <h1 className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold text-[#0F172A] sm:text-4xl">
             Tell us a little more
           </h1>
 
@@ -94,7 +92,7 @@ function AdditionalInfo() {
               name="schoolLevel"
               value={formData.schoolLevel}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
             >
               <option value="">Select an option</option>
               <option value="primary">Primary School</option>
@@ -122,7 +120,7 @@ function AdditionalInfo() {
                 value={formData.preferredLocation}
                 onChange={handleChange}
                 placeholder="e.g. Nairobi, Mombasa, Kisumu..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
               />
             </div>
 
@@ -138,32 +136,27 @@ function AdditionalInfo() {
             </label>
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-
-              {[
-                "Public",
-                "Private",
-                "International",
-                "Any",
-              ].map((type) => (
-                <button
-                  key={type}
-                  type="button"
-                  onClick={() =>
-                    setFormData({
-                      ...formData,
-                      schoolType: type,
-                    })
-                  }
-                  className={`rounded-xl border px-3 py-3 text-sm font-semibold transition ${
-                    formData.schoolType === type
-                      ? "border-blue-600 bg-blue-50 text-blue-600 ring-1 ring-blue-600"
-                      : "border-slate-200 bg-white text-slate-600 hover:border-blue-200"
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-
+              {["Public", "Private", "International", "Any"].map(
+                (type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() =>
+                      setFormData({
+                        ...formData,
+                        schoolType: type,
+                      })
+                    }
+                    className={`rounded-xl border px-3 py-3 text-sm font-semibold transition ${
+                      formData.schoolType === type
+                        ? "border-[#FF6B5F] bg-[#FFF0EE] text-[#FF6B5F] ring-1 ring-[#FF6B5F]"
+                        : "border-slate-200 bg-white text-slate-600 hover:border-[#FFB8B1]"
+                    }`}
+                  >
+                    {type}
+                  </button>
+                )
+              )}
             </div>
           </div>
 
@@ -182,7 +175,7 @@ function AdditionalInfo() {
               onChange={handleChange}
               rows="4"
               placeholder="Tell us about your interests, preferred courses, special requirements..."
-              className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+              className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
             />
           </div>
 
@@ -199,7 +192,7 @@ function AdditionalInfo() {
 
             <button
               type="submit"
-              className="rounded-xl bg-blue-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
+              className="rounded-xl bg-[#FF6B5F] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#FF6B5F]/20 transition hover:-translate-y-0.5 hover:bg-[#E85A50]"
             >
               Continue to Dashboard →
             </button>

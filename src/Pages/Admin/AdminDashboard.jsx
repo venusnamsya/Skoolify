@@ -81,7 +81,7 @@ function AdminDashboard() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#102A43] text-white">
             <Building2 size={24} />
           </div>
 
@@ -108,25 +108,25 @@ function AdminDashboard() {
       title: "Student Vacancies",
       value: "12",
       icon: GraduationCap,
-      iconStyle: "bg-blue-50 text-blue-600",
+      iconStyle: "bg-[#E8EEF5] text-[#102A43]",
     },
     {
       title: "Job Vacancies",
       value: "5",
       icon: BriefcaseBusiness,
-      iconStyle: "bg-purple-50 text-purple-600",
+      iconStyle: "bg-[#FDE9E5] text-[#F26B5B]",
     },
     {
       title: "Applications",
       value: "28",
       icon: ClipboardList,
-      iconStyle: "bg-green-50 text-green-600",
+      iconStyle: "bg-[#E8EEF5] text-[#102A43]",
     },
     {
       title: "Visit Requests",
       value: "8",
       icon: Users,
-      iconStyle: "bg-orange-50 text-orange-600",
+      iconStyle: "bg-[#FDE9E5] text-[#F26B5B]",
     },
   ];
 
@@ -152,7 +152,6 @@ function AdminDashboard() {
     },
   ];
 
- 
   const vacancies = [
     {
       title: "Mathematics Teacher",
@@ -181,17 +180,16 @@ function AdminDashboard() {
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
 
-         
           <Link
             to="/admin-dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#102A43] font-extrabold text-white">
               S
             </span>
 
             <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+              Skool<span className="text-[#F26B5B]">ify</span>
             </span>
           </Link>
 
@@ -201,42 +199,38 @@ function AdminDashboard() {
             {/* Notifications */}
             <button
               type="button"
-              className="relative flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-blue-600"
+              className="relative flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition hover:bg-[#FDE9E5] hover:text-[#F26B5B]"
             >
               <Bell size={19} />
 
-              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-blue-600" />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#F26B5B]" />
             </button>
 
-           
             <Link
               to="/admin-profile"
-              className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 sm:flex"
+              className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-[#FDE9E5] hover:text-[#F26B5B] sm:flex"
             >
               <UserCircle size={19} />
               Profile
             </Link>
 
-           
             <Link
               to="/admin-settings"
-              className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 md:flex"
+              className="hidden h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-slate-600 transition hover:bg-[#FDE9E5] hover:text-[#F26B5B] md:flex"
             >
               <Settings size={18} />
               Settings
             </Link>
 
-           
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#102A43] font-bold text-white">
               {institutionInitial}
             </div>
 
-          
             <button
               type="button"
               onClick={handleLogout}
               title="Logout"
-              className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition hover:bg-red-50 hover:text-red-600"
+              className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition hover:bg-[#FDE9E5] hover:text-[#F26B5B]"
             >
               <LogOut size={18} />
             </button>
@@ -253,7 +247,7 @@ function AdminDashboard() {
 
           <div>
 
-            <p className="text-sm font-semibold text-blue-600">
+            <p className="text-sm font-semibold text-[#F26B5B]">
               SCHOOL ADMINISTRATION
             </p>
 
@@ -265,12 +259,12 @@ function AdminDashboard() {
 
               <MapPin
                 size={16}
-                className="text-blue-600"
+                className="text-[#F26B5B]"
               />
 
               {location}
 
-              <span className="ml-1 flex items-center gap-1 rounded-full bg-orange-50 px-2.5 py-1 text-xs font-bold text-orange-600">
+              <span className="ml-1 flex items-center gap-1 rounded-full bg-[#FDE9E5] px-2.5 py-1 text-xs font-bold text-[#F26B5B]">
                 <CheckCircle2 size={13} />
                 Verification Pending
               </span>
@@ -281,7 +275,7 @@ function AdminDashboard() {
 
           <Link
             to="/admin-vacancy"
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#F26B5B] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#F26B5B]/20 transition hover:bg-[#E85B4B]"
           >
             <Plus size={18} />
             Post Vacancy
@@ -289,7 +283,6 @@ function AdminDashboard() {
 
         </section>
 
-       
         <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           {stats.map((stat) => {
@@ -321,13 +314,11 @@ function AdminDashboard() {
 
         </section>
 
-     
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_380px]">
 
           {/* LEFT */}
           <div className="space-y-6">
 
-            
             <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
 
               <div className="flex items-center justify-between border-b border-slate-100 p-6">
@@ -344,7 +335,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin/applications"
-                  className="text-sm font-bold text-blue-600 hover:underline"
+                  className="text-sm font-bold text-[#F26B5B] hover:underline"
                 >
                   View all
                 </Link>
@@ -362,7 +353,7 @@ function AdminDashboard() {
 
                     <div className="flex items-center gap-3">
 
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 font-bold text-blue-600">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E8EEF5] font-bold text-[#102A43]">
                         {application.name.charAt(0)}
                       </div>
 
@@ -386,7 +377,7 @@ function AdminDashboard() {
                         {application.date}
                       </span>
 
-                      <span className="rounded-full bg-orange-50 px-3 py-1.5 text-xs font-bold text-orange-600">
+                      <span className="rounded-full bg-[#FDE9E5] px-3 py-1.5 text-xs font-bold text-[#F26B5B]">
                         {application.status}
                       </span>
 
@@ -400,7 +391,6 @@ function AdminDashboard() {
 
             </section>
 
-            
             <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
 
               <div className="flex items-center justify-between border-b border-slate-100 p-6">
@@ -417,7 +407,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin/vacancies"
-                  className="text-sm font-bold text-blue-600 hover:underline"
+                  className="text-sm font-bold text-[#F26B5B] hover:underline"
                 >
                   Manage
                 </Link>
@@ -433,7 +423,7 @@ function AdminDashboard() {
                     className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center"
                   >
 
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E8EEF5] text-[#102A43]">
 
                       {vacancy.type === "Job" ? (
                         <BriefcaseBusiness size={20} />
@@ -456,7 +446,7 @@ function AdminDashboard() {
 
                     </div>
 
-                    <span className="rounded-full bg-green-50 px-3 py-1.5 text-xs font-bold text-green-600">
+                    <span className="rounded-full bg-[#E8EEF5] px-3 py-1.5 text-xs font-bold text-[#102A43]">
                       {vacancy.status}
                     </span>
 
@@ -470,15 +460,14 @@ function AdminDashboard() {
 
           </div>
 
-       
+          {/* RIGHT */}
           <aside className="space-y-6">
 
-            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <div className="flex items-center gap-3">
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E8EEF5] text-[#102A43]">
                   <Building2 size={23} />
                 </div>
 
@@ -501,7 +490,7 @@ function AdminDashboard() {
                 <div className="flex items-center gap-2 text-slate-500">
                   <MapPin
                     size={16}
-                    className="shrink-0 text-blue-600"
+                    className="shrink-0 text-[#F26B5B]"
                   />
 
                   <span>
@@ -512,7 +501,7 @@ function AdminDashboard() {
                 <div className="flex items-center gap-2 text-slate-500">
                   <Building2
                     size={16}
-                    className="shrink-0 text-blue-600"
+                    className="shrink-0 text-[#F26B5B]"
                   />
 
                   <span className="break-all">
@@ -520,7 +509,7 @@ function AdminDashboard() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 text-orange-600">
+                <div className="flex items-center gap-2 text-[#F26B5B]">
                   <CheckCircle2 size={16} />
                   Verification pending
                 </div>
@@ -529,19 +518,18 @@ function AdminDashboard() {
 
               <Link
                 to="/admin/profile"
-                className="mt-5 block w-full rounded-xl border border-slate-200 py-3 text-center text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:text-blue-600"
+                className="mt-5 block w-full rounded-xl border border-slate-200 py-3 text-center text-sm font-bold text-slate-700 transition hover:border-[#F26B5B] hover:text-[#F26B5B]"
               >
                 Edit School Profile
               </Link>
 
             </section>
 
-            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <div className="flex items-center gap-3">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FDE9E5] text-[#F26B5B]">
                   <CheckCircle2 size={21} />
                 </div>
 
@@ -559,13 +547,13 @@ function AdminDashboard() {
 
               </div>
 
-              <div className="mt-5 rounded-xl bg-orange-50 p-4">
+              <div className="mt-5 rounded-xl bg-[#FDE9E5] p-4">
 
-                <p className="text-sm font-bold text-orange-700">
+                <p className="text-sm font-bold text-[#D95345]">
                   Verification Pending
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-orange-600">
+                <p className="mt-1 text-xs leading-5 text-[#D95345]">
                   Your school can use the platform while verification
                   is pending.
                 </p>
@@ -579,7 +567,6 @@ function AdminDashboard() {
 
             </section>
 
-            
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
               <h2 className="font-extrabold text-slate-900">
@@ -590,7 +577,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin-vacancy"
-                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-[#E8EEF5] hover:text-[#102A43]"
                 >
                   <Plus size={18} />
                   Post a Vacancy
@@ -598,7 +585,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin-applications"
-                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-[#E8EEF5] hover:text-[#102A43]"
                 >
                   <ClipboardList size={18} />
                   View Applications
@@ -606,7 +593,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin-profile"
-                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-[#E8EEF5] hover:text-[#102A43]"
                 >
                   <UserCircle size={18} />
                   School Profile
@@ -614,7 +601,7 @@ function AdminDashboard() {
 
                 <Link
                   to="/admin-settings"
-                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-600"
+                  className="flex items-center gap-3 rounded-xl bg-slate-50 p-3.5 text-sm font-semibold text-slate-700 transition hover:bg-[#E8EEF5] hover:text-[#102A43]"
                 >
                   <Settings size={18} />
                   Settings
@@ -623,7 +610,7 @@ function AdminDashboard() {
                 <button
                   type="button"
                   onClick={handleLogout}
-                  className="flex w-full items-center gap-3 rounded-xl bg-red-50 p-3.5 text-left text-sm font-semibold text-red-600 transition hover:bg-red-100"
+                  className="flex w-full items-center gap-3 rounded-xl bg-[#FDE9E5] p-3.5 text-left text-sm font-semibold text-[#F26B5B] transition hover:bg-[#FAD8D2]"
                 >
                   <LogOut size={18} />
                   Logout

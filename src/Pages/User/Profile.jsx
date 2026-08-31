@@ -96,7 +96,7 @@ function Profile() {
         <div className="text-center">
           <GraduationCap
             size={40}
-            className="mx-auto text-blue-600"
+            className="mx-auto text-[#172554]"
           />
 
           <p className="mt-3 text-sm font-semibold text-slate-500">
@@ -120,18 +120,18 @@ function Profile() {
             to="/dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#172554] text-white">
               <GraduationCap size={22} />
             </span>
 
             <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+              Skool<span className="text-[#172554]">ify</span>
             </span>
           </Link>
 
           <Link
             to={isSchool ? "/admin-dashboard" : "/dashboard"}
-            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-600"
+            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#172554]"
           >
             <ArrowLeft size={17} />
             Back to Dashboard
@@ -145,7 +145,7 @@ function Profile() {
 
         <div className="mb-8">
 
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#172554]">
             ACCOUNT
           </p>
 
@@ -163,11 +163,11 @@ function Profile() {
         <section className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
 
           {/* PROFILE HEADER */}
-          <div className="bg-blue-600 px-6 py-8 sm:px-8">
+          <div className="bg-[#172554] px-6 py-8 sm:px-8">
 
             <div className="flex items-center gap-4">
 
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-extrabold text-blue-600">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-extrabold text-[#172554]">
                 {isSchool
                   ? (institutionName || "S").charAt(0).toUpperCase()
                   : (firstName || "U").charAt(0).toUpperCase()}
@@ -181,7 +181,7 @@ function Profile() {
                     : `${firstName} ${lastName}`.trim() || "Your Profile"}
                 </h2>
 
-                <p className="mt-1 text-sm text-blue-100">
+                <p className="mt-1 text-sm text-slate-300">
                   {isSchool ? "School Account" : "Parent / Student Account"}
                 </p>
 
@@ -202,7 +202,7 @@ function Profile() {
 
               <div className="flex items-center gap-3">
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#172554]/10 text-[#172554]">
                   {isSchool ? (
                     <School size={19} />
                   ) : (
@@ -254,7 +254,7 @@ function Profile() {
                     }
                     placeholder="Institution name"
                     required
-                    className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-[#172554] focus:ring-2 focus:ring-[#172554]/10"
                   />
 
                 </div>
@@ -277,7 +277,7 @@ function Profile() {
                       setFirstName(e.target.value)
                     }
                     required
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#172554] focus:ring-2 focus:ring-[#172554]/10"
                   />
 
                 </div>
@@ -295,7 +295,7 @@ function Profile() {
                       setLastName(e.target.value)
                     }
                     required
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#172554] focus:ring-2 focus:ring-[#172554]/10"
                   />
 
                 </div>
@@ -351,7 +351,7 @@ function Profile() {
               <button
                 type="submit"
                 disabled={saving}
-                className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-300"
+                className="flex items-center gap-2 rounded-xl bg-[#172554] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0f1b3d] disabled:cursor-not-allowed disabled:bg-slate-400"
               >
 
                 <Save size={17} />

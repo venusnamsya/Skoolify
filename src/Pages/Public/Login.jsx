@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import { School } from "lucide-react";
+
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../../../Firebase";
@@ -72,30 +74,40 @@ function Login() {
     <div className="min-h-screen bg-slate-50 flex">
 
       {/* LEFT SIDE */}
-      <div className="hidden lg:flex lg:w-1/2 bg-blue-600 text-white p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-[#172554] text-white p-12 relative overflow-hidden">
 
-        <div className="absolute -top-20 -right-20 w-72 h-72 bg-blue-500 rounded-full opacity-50" />
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#172554] rounded-full opacity-50" />
 
-        <div className="absolute -bottom-32 -left-20 w-96 h-96 bg-blue-700 rounded-full opacity-50" />
+        <div className="absolute -bottom-32 -left-20 w-96 h-96 bg-[#E76F51] rounded-full opacity-50" />
 
         <div className="relative z-10 flex flex-col justify-between w-full">
 
           <Link to="/" className="flex items-center gap-3">
 
-            <div className="w-11 h-11 rounded-xl bg-white text-blue-600 flex items-center justify-center font-bold text-xl">
+            <div className="w-11 h-11 rounded-xl bg-white text-[#E76F51] flex items-center justify-center font-bold text-xl">
               S
             </div>
 
             <span className="text-2xl font-bold">
-              School<span className="text-blue-200">Find</span>
+              Skool<span className="text-[#E76F51]">ify</span>
             </span>
 
           </Link>
+            <button
+             type="button"
+               onClick={() => navigate("/landing-page")}
+                 className="mb-6 flex items-center gap-2 text-sm font-semibold text-[#172554] transition-colors duration-200 hover:text-[#F47C68]"
+            >
+                    <span className="text-lg">←</span>
+                 Back to Home
+            </button>
+          
+          
 
           <div className="max-w-lg">
 
-            <div className="text-6xl mb-8">
-              🏫
+            <div className="mb-8 text-[#E76F51]">
+              <School size={64} strokeWidth={1.8} />
             </div>
 
             <h1 className="text-5xl font-bold leading-tight mb-6">
@@ -127,18 +139,18 @@ function Login() {
             className="lg:hidden flex items-center gap-2 mb-12 text-xl font-bold text-slate-800"
           >
 
-            <span className="w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center">
+            <span className="w-9 h-9 bg-[#E76F51] text-white rounded-lg flex items-center justify-center">
               S
             </span>
 
-            School<span className="text-blue-600">Find</span>
+            Skool<span className="text-[#E76F51]">ify</span>
 
           </Link>
 
           {/* HEADING */}
           <div className="mb-8">
 
-            <p className="text-blue-600 font-semibold text-sm mb-2">
+            <p className="text-[#E76F51] font-semibold text-sm mb-2">
               WELCOME BACK
             </p>
 
@@ -175,7 +187,7 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white"
               />
 
             </div>
@@ -191,7 +203,7 @@ function Login() {
 
                 <button
                   type="button"
-                  className="text-sm text-blue-600 font-medium"
+                  className="text-sm text-[#E76F51] font-medium"
                 >
                   Forgot password?
                 </button>
@@ -204,7 +216,7 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white"
               />
 
             </div>
@@ -214,7 +226,7 @@ function Login() {
 
               <input
                 type="checkbox"
-                className="w-4 h-4 accent-blue-600"
+                className="w-4 h-4 accent-[#E76F51]"
               />
 
               Remember me
@@ -225,7 +237,7 @@ function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-3.5 rounded-xl font-semibold transition"
+              className="w-full bg-[#E76F51] hover:bg-[#d95f43] disabled:bg-[#e99a87] text-white py-3.5 rounded-xl font-semibold transition"
             >
               {loading ? "Signing in..." : "Sign In →"}
             </button>
@@ -252,7 +264,7 @@ function Login() {
 
             <Link
               to="/register"
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-[#E76F51] font-semibold hover:underline"
             >
               Create one
             </Link>

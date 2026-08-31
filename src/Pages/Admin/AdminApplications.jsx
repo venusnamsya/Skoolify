@@ -95,32 +95,32 @@ function AdminApplications() {
     }
 
     if (status === "Reviewing") {
-      return "bg-blue-50 text-blue-600";
+      return "bg-[#0F172A] text-white";
     }
 
-    return "bg-orange-50 text-orange-600";
+    return "bg-[#FFF0EE] text-[#FF6B5F]";
   };
 
   return (
     <div className="min-h-screen bg-slate-50">
 
-      
+      {/* NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
 
           <Link to="/" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] font-extrabold text-white">
               S
             </span>
 
-            <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+            <span className="text-xl font-extrabold text-[#0F172A]">
+              Skool<span className="text-[#FF6B5F]">ify</span>
             </span>
           </Link>
 
           <Link
             to="/admin-dashboard"
-            className="text-sm font-semibold text-slate-600 hover:text-blue-600"
+            className="text-sm font-semibold text-slate-600 transition hover:text-[#FF6B5F]"
           >
             Admin Dashboard
           </Link>
@@ -128,26 +128,26 @@ function AdminApplications() {
         </div>
       </header>
 
-      
+      {/* CONTENT */}
       <main className="mx-auto max-w-[1400px] px-[5%] py-8">
 
-        
+        {/* BACK */}
         <Link
           to="/admin-dashboard"
-          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-blue-600"
+          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#FF6B5F]"
         >
           <ArrowLeft size={17} />
           Back to dashboard
         </Link>
 
-        
+        {/* HEADER */}
         <section className="mb-8">
 
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#FF6B5F]">
             SCHOOL ADMINISTRATION
           </p>
 
-          <h1 className="mt-1 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+          <h1 className="mt-1 text-3xl font-extrabold text-[#0F172A] sm:text-4xl">
             Applications
           </h1>
 
@@ -160,8 +160,10 @@ function AdminApplications() {
         {/* STATS */}
         <section className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
+          {/* TOTAL */}
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
               <ClipboardList size={21} />
             </div>
 
@@ -169,13 +171,16 @@ function AdminApplications() {
               TOTAL APPLICATIONS
             </p>
 
-            <p className="mt-1 text-2xl font-extrabold text-slate-900">
+            <p className="mt-1 text-2xl font-extrabold text-[#0F172A]">
               {applications.length}
             </p>
+
           </div>
 
+          {/* PENDING */}
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
+
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
               <User size={21} />
             </div>
 
@@ -183,12 +188,15 @@ function AdminApplications() {
               PENDING
             </p>
 
-            <p className="mt-1 text-2xl font-extrabold text-slate-900">
+            <p className="mt-1 text-2xl font-extrabold text-[#0F172A]">
               {applications.filter((a) => a.status === "Pending").length}
             </p>
+
           </div>
 
+          {/* ACCEPTED */}
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-green-600">
               <CheckCircle2 size={21} />
             </div>
@@ -197,12 +205,15 @@ function AdminApplications() {
               ACCEPTED
             </p>
 
-            <p className="mt-1 text-2xl font-extrabold text-slate-900">
+            <p className="mt-1 text-2xl font-extrabold text-[#0F172A]">
               {applications.filter((a) => a.status === "Accepted").length}
             </p>
+
           </div>
 
+          {/* REJECTED */}
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-red-600">
               <XCircle size={21} />
             </div>
@@ -211,20 +222,22 @@ function AdminApplications() {
               REJECTED
             </p>
 
-            <p className="mt-1 text-2xl font-extrabold text-slate-900">
+            <p className="mt-1 text-2xl font-extrabold text-[#0F172A]">
               {applications.filter((a) => a.status === "Rejected").length}
             </p>
+
           </div>
 
         </section>
 
+        {/* APPLICATIONS */}
         <section className="rounded-2xl border border-slate-100 bg-white shadow-sm">
 
-      
+          {/* HEADER */}
           <div className="flex flex-col gap-4 border-b border-slate-100 p-6 lg:flex-row lg:items-center lg:justify-between">
 
             <div>
-              <h2 className="text-xl font-extrabold text-slate-900">
+              <h2 className="text-xl font-extrabold text-[#0F172A]">
                 All Applications
               </h2>
 
@@ -248,16 +261,16 @@ function AdminApplications() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search applications..."
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none focus:border-blue-500 focus:bg-white sm:w-64"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white sm:w-64"
                 />
 
               </div>
 
-             
+              {/* FILTER */}
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-blue-500"
+                className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none transition focus:border-[#FF6B5F]"
               >
                 <option value="All">All statuses</option>
                 <option value="Pending">Pending</option>
@@ -270,27 +283,28 @@ function AdminApplications() {
 
           </div>
 
-     <div className="divide-y divide-slate-100">
+          {/* APPLICATION LIST */}
+          <div className="divide-y divide-slate-100">
 
-        {filteredApplications.map((application) => (
+            {filteredApplications.map((application) => (
 
-            <div
+              <div
                 key={application.id}
                 className="p-6 transition hover:bg-slate-50/50"
-             >
+              >
 
                 <div className="flex flex-col gap-5 xl:flex-row xl:items-center">
 
-                  
+                  {/* APPLICANT */}
                   <div className="flex flex-1 items-center gap-4">
 
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 font-bold text-blue-600">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF0EE] font-bold text-[#FF6B5F]">
                       {application.name.charAt(0)}
                     </div>
 
                     <div>
 
-                      <h3 className="font-bold text-slate-800">
+                      <h3 className="font-bold text-[#0F172A]">
                         {application.name}
                       </h3>
 
@@ -302,10 +316,10 @@ function AdminApplications() {
 
                   </div>
 
-                 
+                  {/* APPLICATION TYPE */}
                   <div className="flex items-center gap-3 xl:w-52">
 
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
 
                       {application.type === "Job Application" ? (
                         <BriefcaseBusiness size={19} />
@@ -316,6 +330,7 @@ function AdminApplications() {
                     </div>
 
                     <div>
+
                       <p className="text-xs text-slate-400">
                         APPLICATION
                       </p>
@@ -323,10 +338,12 @@ function AdminApplications() {
                       <p className="mt-1 text-sm font-semibold text-slate-700">
                         {application.type}
                       </p>
+
                     </div>
 
                   </div>
 
+                  {/* VACANCY */}
                   <div className="xl:w-56">
 
                     <p className="text-xs text-slate-400">
@@ -363,7 +380,7 @@ function AdminApplications() {
                             onClick={() =>
                               updateStatus(application.id, "Accepted")
                             }
-                            className="rounded-lg bg-green-50 px-3 py-2 text-xs font-bold text-green-600 hover:bg-green-100"
+                            className="rounded-lg bg-green-50 px-3 py-2 text-xs font-bold text-green-600 transition hover:bg-green-100"
                           >
                             Accept
                           </button>
@@ -373,7 +390,7 @@ function AdminApplications() {
                             onClick={() =>
                               updateStatus(application.id, "Rejected")
                             }
-                            className="rounded-lg bg-red-50 px-3 py-2 text-xs font-bold text-red-600 hover:bg-red-100"
+                            className="rounded-lg bg-red-50 px-3 py-2 text-xs font-bold text-red-600 transition hover:bg-red-100"
                           >
                             Reject
                           </button>
@@ -387,7 +404,7 @@ function AdminApplications() {
                         onClick={() =>
                           updateStatus(application.id, "Reviewing")
                         }
-                        className="rounded-lg bg-blue-50 px-3 py-2 text-xs font-bold text-blue-600 hover:bg-blue-100"
+                        className="rounded-lg bg-[#FFF0EE] px-3 py-2 text-xs font-bold text-[#FF6B5F] transition hover:bg-[#FFE2DF]"
                       >
                         Reopen
                       </button>
@@ -399,7 +416,7 @@ function AdminApplications() {
                         onClick={() =>
                           updateStatus(application.id, "Reviewing")
                         }
-                        className="rounded-lg bg-blue-50 px-3 py-2 text-xs font-bold text-blue-600 hover:bg-blue-100"
+                        className="rounded-lg bg-[#FFF0EE] px-3 py-2 text-xs font-bold text-[#FF6B5F] transition hover:bg-[#FFE2DF]"
                       >
                         Review Again
                       </button>
@@ -409,10 +426,9 @@ function AdminApplications() {
 
                 </div>
 
-            </div>
+              </div>
 
             ))}
-
 
           </div>
 
@@ -424,7 +440,7 @@ function AdminApplications() {
                 <Search size={24} />
               </div>
 
-              <h3 className="mt-4 font-bold text-slate-800">
+              <h3 className="mt-4 font-bold text-[#0F172A]">
                 No applications found
               </h3>
 

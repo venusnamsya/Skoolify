@@ -35,18 +35,18 @@ function AdminVacancy() {
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
 
           <Link to="/" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#102A43] font-extrabold text-white">
               S
             </span>
 
             <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+              Skool<span className="text-[#F26B5B]">ify</span>
             </span>
           </Link>
 
           <Link
             to="/admin-dashboard"
-            className="text-sm font-semibold text-slate-600 hover:text-blue-600"
+            className="text-sm font-semibold text-slate-600 transition hover:text-[#F26B5B]"
           >
             Admin Dashboard
           </Link>
@@ -60,7 +60,7 @@ function AdminVacancy() {
         {/* BACK */}
         <Link
           to="/admin-dashboard"
-          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-blue-600"
+          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#F26B5B]"
         >
           <ArrowLeft size={17} />
           Back to dashboard
@@ -68,7 +68,7 @@ function AdminVacancy() {
 
         {/* HEADER */}
         <section className="mb-8">
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#F26B5B]">
             SCHOOL ADMINISTRATION
           </p>
 
@@ -96,20 +96,21 @@ function AdminVacancy() {
 
             <div className="grid gap-3 sm:grid-cols-2">
 
+              {/* JOB */}
               <button
                 type="button"
                 onClick={() => setType("job")}
                 className={`flex items-center gap-3 rounded-xl border p-4 text-left transition ${
                   type === "job"
-                    ? "border-blue-600 bg-blue-50 ring-1 ring-blue-600"
-                    : "border-slate-200 hover:border-blue-200"
+                    ? "border-[#102A43] bg-[#E8EEF5] ring-1 ring-[#102A43]"
+                    : "border-slate-200 hover:border-[#F26B5B]"
                 }`}
               >
                 <BriefcaseBusiness
                   size={23}
                   className={
                     type === "job"
-                      ? "text-blue-600"
+                      ? "text-[#102A43]"
                       : "text-slate-500"
                   }
                 />
@@ -125,20 +126,21 @@ function AdminVacancy() {
                 </div>
               </button>
 
+              {/* STUDENT */}
               <button
                 type="button"
                 onClick={() => setType("student")}
                 className={`flex items-center gap-3 rounded-xl border p-4 text-left transition ${
                   type === "student"
-                    ? "border-blue-600 bg-blue-50 ring-1 ring-blue-600"
-                    : "border-slate-200 hover:border-blue-200"
+                    ? "border-[#F26B5B] bg-[#FDE9E5] ring-1 ring-[#F26B5B]"
+                    : "border-slate-200 hover:border-[#F26B5B]"
                 }`}
               >
                 <GraduationCap
                   size={23}
                   className={
                     type === "student"
-                      ? "text-blue-600"
+                      ? "text-[#F26B5B]"
                       : "text-slate-500"
                   }
                 />
@@ -173,7 +175,7 @@ function AdminVacancy() {
                   : "e.g. Grade 7 Admission"
               }
               required
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#F26B5B] focus:ring-2 focus:ring-[#FDE9E5]"
             />
           </div>
 
@@ -195,7 +197,7 @@ function AdminVacancy() {
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Westlands, Nairobi"
                 required
-                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 pl-11 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 pl-11 text-sm outline-none transition focus:border-[#F26B5B] focus:ring-2 focus:ring-[#FDE9E5]"
               />
             </div>
           </div>
@@ -213,7 +215,7 @@ function AdminVacancy() {
               onChange={(e) => setVacancies(e.target.value)}
               placeholder="e.g. 5"
               required
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#F26B5B] focus:ring-2 focus:ring-[#FDE9E5]"
             />
           </div>
 
@@ -229,7 +231,7 @@ function AdminVacancy() {
               placeholder="Describe the opportunity..."
               rows="5"
               required
-              className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#F26B5B] focus:ring-2 focus:ring-[#FDE9E5]"
             />
           </div>
 
@@ -244,7 +246,7 @@ function AdminVacancy() {
               value={deadline}
               onChange={(e) => setDeadline(e.target.value)}
               required
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#F26B5B] focus:ring-2 focus:ring-[#FDE9E5]"
             />
           </div>
 
@@ -253,14 +255,14 @@ function AdminVacancy() {
 
             <Link
               to="/admin-dashboard"
-              className="rounded-xl border border-slate-200 px-6 py-3 text-center text-sm font-bold text-slate-600 hover:bg-slate-50"
+              className="rounded-xl border border-slate-200 px-6 py-3 text-center text-sm font-bold text-slate-600 transition hover:bg-slate-50"
             >
               Cancel
             </Link>
 
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#F26B5B] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#F26B5B]/20 transition hover:bg-[#E85B4B]"
             >
               <Plus size={18} />
               Post Vacancy

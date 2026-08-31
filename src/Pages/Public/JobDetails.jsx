@@ -70,18 +70,18 @@ function JobDetails() {
             to="/dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] font-extrabold text-white">
               S
             </span>
 
-            <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+            <span className="text-xl font-extrabold text-[#0F172A]">
+              Skool<span className="text-[#FF6B5F]">ify</span>
             </span>
           </Link>
 
           <Link
             to={`/schools/${id}`}
-            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-600"
+            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#FF6B5F]"
           >
             <ArrowLeft size={17} />
             Back to school
@@ -100,17 +100,17 @@ function JobDetails() {
 
             <div className="flex gap-4">
 
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FFF0EE] text-[#FF6B5F]">
                 <BriefcaseBusiness size={27} />
               </div>
 
               <div>
 
-                <span className="inline-flex rounded-full bg-green-50 px-3 py-1.5 text-xs font-bold text-green-600">
+                <span className="inline-flex rounded-full bg-[#FFF0EE] px-3 py-1.5 text-xs font-bold text-[#FF6B5F]">
                   {job.type}
                 </span>
 
-                <h1 className="mt-3 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                <h1 className="mt-3 text-3xl font-extrabold text-[#0F172A] sm:text-4xl">
                   {job.title}
                 </h1>
 
@@ -119,7 +119,7 @@ function JobDetails() {
                   <p className="flex items-center gap-2">
                     <Building2
                       size={17}
-                      className="text-blue-600"
+                      className="text-[#FF6B5F]"
                     />
                     {job.school}
                   </p>
@@ -127,7 +127,7 @@ function JobDetails() {
                   <p className="flex items-center gap-2">
                     <MapPin
                       size={17}
-                      className="text-blue-600"
+                      className="text-[#FF6B5F]"
                     />
                     {job.location}
                   </p>
@@ -141,7 +141,7 @@ function JobDetails() {
             <button
               type="button"
               onClick={() => setShowApplication(true)}
-              className="flex shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+              className="flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#FF6B5F] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#FF6B5F]/20 transition hover:bg-[#e85c52]"
             >
               <Send size={18} />
               Apply Now
@@ -201,7 +201,7 @@ function JobDetails() {
             {/* DESCRIPTION */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-7">
 
-              <h2 className="text-xl font-extrabold text-slate-900">
+              <h2 className="text-xl font-extrabold text-[#0F172A]">
                 Job Description
               </h2>
 
@@ -214,7 +214,7 @@ function JobDetails() {
             {/* RESPONSIBILITIES */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-7">
 
-              <h2 className="text-xl font-extrabold text-slate-900">
+              <h2 className="text-xl font-extrabold text-[#0F172A]">
                 Responsibilities
               </h2>
 
@@ -227,7 +227,7 @@ function JobDetails() {
                   >
                     <CheckCircle2
                       size={18}
-                      className="mt-1 shrink-0 text-blue-600"
+                      className="mt-1 shrink-0 text-[#FF6B5F]"
                     />
                     {item}
                   </div>
@@ -240,7 +240,7 @@ function JobDetails() {
             {/* REQUIREMENTS */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-7">
 
-              <h2 className="text-xl font-extrabold text-slate-900">
+              <h2 className="text-xl font-extrabold text-[#0F172A]">
                 Requirements
               </h2>
 
@@ -253,7 +253,7 @@ function JobDetails() {
                   >
                     <CheckCircle2
                       size={18}
-                      className="mt-1 shrink-0 text-green-600"
+                      className="mt-1 shrink-0 text-[#FF6B5F]"
                     />
                     {item}
                   </div>
@@ -271,13 +271,13 @@ function JobDetails() {
             {/* SCHOOL */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
-              <h2 className="text-lg font-extrabold text-slate-900">
+              <h2 className="text-lg font-extrabold text-[#0F172A]">
                 About the School
               </h2>
 
               <div className="mt-5 flex items-center gap-3">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
                   <Building2 size={20} />
                 </div>
 
@@ -297,7 +297,7 @@ function JobDetails() {
 
               <Link
                 to={`/schools/${id}`}
-                className="mt-5 block w-full rounded-xl border border-slate-200 py-3 text-center text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:text-blue-600"
+                className="mt-5 block w-full rounded-xl border border-slate-200 py-3 text-center text-sm font-bold text-slate-700 transition hover:border-[#FF6B5F] hover:text-[#FF6B5F]"
               >
                 View School Profile
               </Link>
@@ -307,7 +307,7 @@ function JobDetails() {
             {/* LOCATION */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
-              <h2 className="text-lg font-extrabold text-slate-900">
+              <h2 className="text-lg font-extrabold text-[#0F172A]">
                 Job Location
               </h2>
 
@@ -317,7 +317,7 @@ function JobDetails() {
 
                   <MapPin
                     size={20}
-                    className="shrink-0 text-blue-600"
+                    className="shrink-0 text-[#FF6B5F]"
                   />
 
                   <p className="text-sm font-semibold text-slate-700">
@@ -330,7 +330,7 @@ function JobDetails() {
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
+                  className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#FF6B5F] py-3 text-sm font-bold text-white transition hover:bg-[#e85c52]"
                 >
                   <MapPin size={17} />
                   Open in Google Maps
@@ -343,7 +343,7 @@ function JobDetails() {
             {/* CONTACT */}
             <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
 
-              <h2 className="text-lg font-extrabold text-slate-900">
+              <h2 className="text-lg font-extrabold text-[#0F172A]">
                 Contact School
               </h2>
 
@@ -351,7 +351,7 @@ function JobDetails() {
 
                 <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
                     <Phone size={17} />
                   </div>
 
@@ -371,7 +371,7 @@ function JobDetails() {
 
                 <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
                     <Mail size={17} />
                   </div>
 
@@ -401,7 +401,7 @@ function JobDetails() {
 
       {/* APPLICATION MODAL */}
       {showApplication && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0F172A]/60 p-4">
 
           <div className="max-h-[90vh] w-full max-w-xl overflow-auto rounded-2xl bg-white shadow-2xl">
 
@@ -410,11 +410,11 @@ function JobDetails() {
 
               <div>
 
-                <p className="text-xs font-bold text-blue-600">
+                <p className="text-xs font-bold text-[#FF6B5F]">
                   {job.school}
                 </p>
 
-                <h2 className="mt-1 text-xl font-extrabold text-slate-900">
+                <h2 className="mt-1 text-xl font-extrabold text-[#0F172A]">
                   Apply for {job.title}
                 </h2>
 
@@ -423,7 +423,7 @@ function JobDetails() {
               <button
                 type="button"
                 onClick={() => setShowApplication(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-500 hover:text-slate-900"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-500 transition hover:bg-[#FFF0EE] hover:text-[#FF6B5F]"
               >
                 <X size={20} />
               </button>
@@ -447,7 +447,7 @@ function JobDetails() {
                     type="text"
                     required
                     placeholder="Enter your full name"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FF6B5F]/20"
                   />
 
                 </div>
@@ -462,7 +462,7 @@ function JobDetails() {
                     type="email"
                     required
                     placeholder="you@example.com"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FF6B5F]/20"
                   />
 
                 </div>
@@ -477,7 +477,7 @@ function JobDetails() {
                     type="tel"
                     required
                     placeholder="+254 7XX XXX XXX"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FF6B5F]/20"
                   />
 
                 </div>
@@ -492,14 +492,14 @@ function JobDetails() {
                     rows="4"
                     required
                     placeholder="Tell the school briefly why you are interested in this position..."
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FF6B5F]/20"
                   />
 
                 </div>
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FF6B5F] py-3.5 text-sm font-bold text-white transition hover:bg-[#e85c52]"
                 >
                   <Send size={17} />
                   Submit Application
@@ -515,7 +515,7 @@ function JobDetails() {
                   <CheckCircle2 size={34} />
                 </div>
 
-                <h3 className="mt-5 text-xl font-extrabold text-slate-900">
+                <h3 className="mt-5 text-xl font-extrabold text-[#0F172A]">
                   Application Submitted!
                 </h3>
 
@@ -531,7 +531,7 @@ function JobDetails() {
                     setShowApplication(false);
                     setSubmitted(false);
                   }}
-                  className="mt-6 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white hover:bg-blue-700"
+                  className="mt-6 rounded-xl bg-[#FF6B5F] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#e85c52]"
                 >
                   Done
                 </button>

@@ -11,6 +11,7 @@ function RequiredInfo() {
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
       <div className="w-full max-w-2xl">
+
         <div className="text-center mb-8">
           <div className="inline-flex w-12 h-12 bg-blue-600 text-white rounded-xl items-center justify-center font-bold text-xl mb-4">
             S
@@ -34,6 +35,7 @@ function RequiredInfo() {
           className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm"
         >
           <div className="grid sm:grid-cols-2 gap-5">
+
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">
                 ID / Identification Number
@@ -120,6 +122,7 @@ function RequiredInfo() {
                 <option>Other</option>
               </select>
             </div>
+
           </div>
 
           <button
@@ -134,6 +137,7 @@ function RequiredInfo() {
           Your information would be securely stored and protected in
           the full version of the platform.
         </p>
+
       </div>
     </div>
   );

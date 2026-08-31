@@ -20,18 +20,18 @@ function Settings() {
             to="/dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-white">
               <GraduationCap size={22} />
             </span>
 
-            <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+            <span className="text-xl font-extrabold text-[#0F172A]">
+              Skool<span className="text-[#FF6B5A]">ify</span>
             </span>
           </Link>
 
           <Link
             to="/dashboard"
-            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-600"
+            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#FF6B5A]"
           >
             <ArrowLeft size={17} />
             Back to Dashboard
@@ -45,11 +45,11 @@ function Settings() {
 
         <div className="mb-8">
 
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#FF6B5A]">
             ACCOUNT
           </p>
 
-          <h1 className="mt-1 text-3xl font-extrabold text-slate-900">
+          <h1 className="mt-1 text-3xl font-extrabold text-[#0F172A]">
             Settings
           </h1>
 
@@ -65,16 +65,16 @@ function Settings() {
 
           <Link
             to="/profile"
-            className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-md"
+            className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#FF6B5A]/30 hover:shadow-md"
           >
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF0ED] text-[#FF6B5A]">
               <UserRound size={21} />
             </div>
 
             <div className="flex-1">
 
-              <h2 className="font-bold text-slate-800">
+              <h2 className="font-bold text-[#0F172A]">
                 Profile Settings
               </h2>
 
@@ -95,16 +95,16 @@ function Settings() {
 
           <button
             type="button"
-            className="flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-md"
+            className="flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-[#FF6B5A]/30 hover:shadow-md"
           >
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF0ED] text-[#FF6B5A]">
               <Bell size={21} />
             </div>
 
             <div className="flex-1">
 
-              <h2 className="font-bold text-slate-800">
+              <h2 className="font-bold text-[#0F172A]">
                 Notifications
               </h2>
 
@@ -124,16 +124,16 @@ function Settings() {
 
           <button
             type="button"
-            className="flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-md"
+            className="flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-[#FF6B5A]/30 hover:shadow-md"
           >
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-green-600">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF0ED] text-[#FF6B5A]">
               <Lock size={21} />
             </div>
 
             <div className="flex-1">
 
-              <h2 className="font-bold text-slate-800">
+              <h2 className="font-bold text-[#0F172A]">
                 Security
               </h2>
 

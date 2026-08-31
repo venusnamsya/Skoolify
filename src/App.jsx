@@ -5,7 +5,7 @@ import Login from "./Pages/Public/Login";
 import Register from "./Pages/Public/Register";
 import RequiredInfo from "./Pages/Onboarding/RequiredInfo";
 import AdditionalInformation from "./Pages/Onboarding/AdditionalInformation";
-import Dashboard from "./Pages/User/Dasboard";
+import Dashboard from "./Pages/User/Dashboard";
 import SchoolDetails from "./Pages/User/SchoolDetails";
 import JobDetails from "./Pages/Public/JobDetails";
 import AdminDashboard from "./Pages/Admin/AdminDashboard";

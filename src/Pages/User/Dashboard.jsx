@@ -51,7 +51,6 @@ function Dashboard() {
         if (userSnapshot.exists()) {
           setUserProfile(userSnapshot.data());
         } else {
-          // Fallback if the Firestore profile doesn't exist
           setUserProfile({
             email: user.email,
             role: "parent",
@@ -189,7 +188,7 @@ function Dashboard() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#F97360] text-white">
             <GraduationCap size={25} />
           </div>
 
@@ -222,12 +221,12 @@ function Dashboard() {
             to="/dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F97360] text-white">
               <GraduationCap size={22} />
             </span>
 
             <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+              Skool<span className="text-[#F97360]">ify</span>
             </span>
           </Link>
 
@@ -247,7 +246,7 @@ function Dashboard() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search schools..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-[#F97360] focus:bg-white focus:ring-2 focus:ring-[#F97360]/20"
               />
 
             </div>
@@ -263,12 +262,12 @@ function Dashboard() {
             <button
               type="button"
               title="Notifications"
-              className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 transition hover:bg-blue-50 hover:text-blue-600"
+              className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 transition hover:bg-[#FFF1EF] hover:text-[#F97360]"
             >
 
               <Bell size={19} />
 
-              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-blue-600" />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#F97360]" />
 
             </button>
 
@@ -280,7 +279,7 @@ function Dashboard() {
               className="hidden items-center gap-3 rounded-xl px-2 py-1.5 transition hover:bg-slate-50 sm:flex"
             >
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFF1EF] font-bold text-[#F97360]">
                 {userName.charAt(0).toUpperCase()}
               </div>
 
@@ -304,7 +303,7 @@ function Dashboard() {
               type="button"
               onClick={() => navigate("/settings")}
               title="Settings"
-              className="hidden h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 transition hover:bg-blue-50 hover:text-blue-600 md:flex"
+              className="hidden h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 transition hover:bg-[#FFF1EF] hover:text-[#F97360] md:flex"
             >
               <Settings size={18} />
             </button>
@@ -336,7 +335,7 @@ function Dashboard() {
 
         <section className="mb-8">
 
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#F97360]">
             DASHBOARD
           </p>
 
@@ -363,7 +362,7 @@ function Dashboard() {
 
             <div className="flex items-center justify-between">
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F97360]">
                 <GraduationCap size={20} />
               </div>
 
@@ -389,11 +388,11 @@ function Dashboard() {
 
             <div className="flex items-center justify-between">
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F97360]">
                 <Users size={20} />
               </div>
 
-              <span className="text-xs font-semibold text-blue-600">
+              <span className="text-xs font-semibold text-[#F97360]">
                 Updated
               </span>
 
@@ -439,17 +438,13 @@ function Dashboard() {
 
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
 
-            <div className="flex items-center justify-between">
-
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
-                <CalendarDays size={20} />
-              </div>
-
-              <span className="text-xs font-semibold text-orange-500">
-                Upcoming
-              </span>
-
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
+              <CalendarDays size={20} />
             </div>
+
+            <span className="text-xs font-semibold text-orange-500">
+              Upcoming
+            </span>
 
             <p className="mt-5 text-2xl font-extrabold text-slate-900">
               2
@@ -467,7 +462,7 @@ function Dashboard() {
             SEARCH PANEL
         ================================================== */}
 
-        <section className="mb-10 rounded-2xl bg-blue-600 p-6 shadow-lg shadow-blue-600/10 sm:p-8">
+        <section className="mb-10 rounded-2xl bg-[#F97360] p-6 shadow-lg shadow-[#F97360]/10 sm:p-8">
 
           <div className="mb-5">
 
@@ -475,7 +470,7 @@ function Dashboard() {
               Find your school
             </h2>
 
-            <p className="mt-1 text-sm text-blue-100">
+            <p className="mt-1 text-sm text-white/80">
               Search by school name or filter by location.
             </p>
 
@@ -547,7 +542,7 @@ function Dashboard() {
 
             <button
               type="button"
-              className="rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-slate-800"
+              className="rounded-xl bg-[#172554] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#101B40]"
             >
               Search
             </button>
@@ -578,7 +573,7 @@ function Dashboard() {
 
             <button
               type="button"
-              className="text-sm font-bold text-blue-600"
+              className="text-sm font-bold text-[#F97360]"
             >
               View all →
             </button>
@@ -598,12 +593,12 @@ function Dashboard() {
 
                 {/* IMAGE */}
 
-                <div className="relative flex h-48 items-center justify-center bg-blue-50">
+                <div className="relative flex h-48 items-center justify-center bg-[#FFF1EF]">
 
                   <GraduationCap
                     size={75}
                     strokeWidth={1.3}
-                    className="text-blue-300"
+                    className="text-[#F9B0A9]"
                   />
 
                   <span className="absolute left-4 top-4 flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-[11px] font-bold text-green-600 shadow-sm">
@@ -616,7 +611,7 @@ function Dashboard() {
 
                   <button
                     type="button"
-                    className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-500 shadow-sm transition hover:text-blue-600"
+                    className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-500 shadow-sm transition hover:text-[#F97360]"
                   >
                     <Bookmark size={17} />
                   </button>
@@ -629,7 +624,7 @@ function Dashboard() {
 
                   <div className="mb-2 flex items-center justify-between">
 
-                    <span className="rounded-md bg-blue-50 px-2.5 py-1 text-[10px] font-bold text-blue-600">
+                    <span className="rounded-md bg-[#FFF1EF] px-2.5 py-1 text-[10px] font-bold text-[#F97360]">
                       {school.type}
                     </span>
 
@@ -659,7 +654,7 @@ function Dashboard() {
                         VACANCIES
                       </p>
 
-                      <p className="mt-1 text-sm font-bold text-blue-600">
+                      <p className="mt-1 text-sm font-bold text-[#F97360]">
                         {school.vacancies} available
                       </p>
 
@@ -681,7 +676,7 @@ function Dashboard() {
 
                   <Link
                     to={`/schools/${school.id}`}
-                    className="mt-5 block w-full rounded-xl bg-slate-900 py-3 text-center text-sm font-bold text-white transition hover:bg-blue-600"
+                    className="mt-5 block w-full rounded-xl bg-[#172554] py-3 text-center text-sm font-bold text-white transition hover:bg-[#F97360]"
                   >
                     View School
                   </Link>
@@ -741,7 +736,7 @@ function Dashboard() {
 
             <button
               type="button"
-              className="text-sm font-bold text-blue-600"
+              className="text-sm font-bold text-[#F97360]"
             >
               View all
             </button>
@@ -750,7 +745,7 @@ function Dashboard() {
 
           <div className="mt-6 flex items-center gap-4 rounded-xl bg-slate-50 p-4">
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F97360]">
               <CalendarDays size={21} />
             </div>
 

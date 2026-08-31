@@ -153,18 +153,18 @@ function SchoolDetails() {
             to="/dashboard"
             className="flex items-center gap-2.5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F26B5E] font-extrabold text-white">
               S
             </span>
 
             <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+              Skool<span className="text-[#F26B5E]">ify</span>
             </span>
           </Link>
 
           <Link
             to="/dashboard"
-            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-600"
+            className="flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#F26B5E]"
           >
             <ArrowLeft size={17} />
             Back to schools
@@ -180,7 +180,7 @@ function SchoolDetails() {
         <section className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
 
           {/* SCHOOL IMAGE */}
-          <div className="relative flex h-[280px] items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 sm:h-[330px]">
+          <div className="relative flex h-[280px] items-center justify-center bg-gradient-to-br from-[#FFF1EF] to-[#FAD4CF] sm:h-[330px]">
 
             <div className="text-[100px] sm:text-[120px]">
               🏫
@@ -192,7 +192,7 @@ function SchoolDetails() {
             </div>
 
             <button
-              className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm transition hover:text-blue-600"
+              className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm transition hover:text-[#F26B5E]"
               type="button"
               aria-label="Save school"
             >
@@ -210,7 +210,7 @@ function SchoolDetails() {
 
                 <div className="mb-3 flex flex-wrap items-center gap-2">
 
-                  <span className="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-bold text-blue-600">
+                  <span className="rounded-full bg-[#FFF1EF] px-3 py-1.5 text-xs font-bold text-[#F26B5E]">
                     {school.type}
                   </span>
 
@@ -229,7 +229,7 @@ function SchoolDetails() {
                   <span className="flex items-center gap-1.5">
                     <MapPin
                       size={17}
-                      className="text-blue-600"
+                      className="text-[#F26B5E]"
                     />
                     {school.location}
                   </span>
@@ -251,7 +251,7 @@ function SchoolDetails() {
 
                 <Link
                   to={`/schools/${id}/booking`}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#F26B5E] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#F26B5E]/20 transition hover:-translate-y-0.5 hover:bg-[#E85B50]"
                 >
                   <CalendarDays size={18} />
                   Book a Visit
@@ -271,7 +271,7 @@ function SchoolDetails() {
           {/* STUDENT VACANCIES */}
           <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
 
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F26B5E]">
               <Users size={20} />
             </div>
 
@@ -373,7 +373,7 @@ function SchoolDetails() {
                   >
                     <CheckCircle2
                       size={17}
-                      className="shrink-0 text-blue-600"
+                      className="shrink-0 text-[#F26B5E]"
                     />
 
                     {facility}
@@ -419,7 +419,7 @@ function SchoolDetails() {
 
                     <div className="flex items-start gap-4">
 
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F26B5E]">
                         <GraduationCap size={20} />
                       </div>
 
@@ -493,15 +493,14 @@ function SchoolDetails() {
 
                     </div>
 
-                    
-                        <Link
-                         to={`/schools/${id}/jobs/${job.title
-                           .toLowerCase()
-                           .replace(/\s+/g, "-")}`}
-                           className="rounded-lg bg-blue-50 px-3 py-2 text-xs font-bold text-blue-600 transition hover:bg-blue-100"
-                        >
-                          View
-                        </Link>
+                    <Link
+                      to={`/schools/${id}/jobs/${job.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                      className="rounded-lg bg-[#FFF1EF] px-3 py-2 text-xs font-bold text-[#F26B5E] transition hover:bg-[#FAD4CF]"
+                    >
+                      View
+                    </Link>
 
                   </div>
 
@@ -523,9 +522,9 @@ function SchoolDetails() {
                 Fee Structure
               </h2>
 
-              <div className="mt-5 rounded-xl bg-blue-50 p-5">
+              <div className="mt-5 rounded-xl bg-[#FFF1EF] p-5">
 
-                <p className="text-xs font-semibold text-blue-600">
+                <p className="text-xs font-semibold text-[#F26B5E]">
                   ESTIMATED SCHOOL FEES
                 </p>
 
@@ -542,7 +541,7 @@ function SchoolDetails() {
               <button
                 type="button"
                 onClick={() => setShowFees(true)}
-                className="mt-4 w-full rounded-xl border border-slate-200 py-3 text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:text-blue-600"
+                className="mt-4 w-full rounded-xl border border-slate-200 py-3 text-sm font-bold text-slate-700 transition hover:border-[#F26B5E]/30 hover:text-[#F26B5E]"
               >
                 View Full Fee Structure
               </button>
@@ -561,7 +560,7 @@ function SchoolDetails() {
                 {/* PHONE */}
                 <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-[#F26B5E]">
                     <Phone size={18} />
                   </div>
 
@@ -582,7 +581,7 @@ function SchoolDetails() {
                 {/* EMAIL */}
                 <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-[#F26B5E]">
                     <Mail size={18} />
                   </div>
 
@@ -615,7 +614,7 @@ function SchoolDetails() {
 
                 <div className="flex items-start gap-3">
 
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF1EF] text-[#F26B5E]">
                     <MapPin size={20} />
                   </div>
 
@@ -638,7 +637,7 @@ function SchoolDetails() {
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#F26B5E] py-3 text-sm font-bold text-white transition hover:bg-[#E85B50]"
                 >
                   <MapPin size={17} />
                   View on Google Maps
@@ -666,7 +665,7 @@ function SchoolDetails() {
 
               <div>
 
-                <p className="text-xs font-bold text-blue-600">
+                <p className="text-xs font-bold text-[#F26B5E]">
                   {school.name}
                 </p>
 
@@ -772,7 +771,7 @@ function SchoolDetails() {
               <button
                 type="button"
                 onClick={() => setShowFees(false)}
-                className="w-full rounded-xl bg-blue-600 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
+                className="w-full rounded-xl bg-[#172554] py-3 text-sm font-bold text-white transition hover:bg-[#0F1A3D]"
               >
                 Close Fee Structure
               </button>

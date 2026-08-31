@@ -32,18 +32,18 @@ function AdminProfile() {
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-[5%]">
 
           <Link to="/admin-dashboard" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-extrabold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] font-extrabold text-white">
               S
             </span>
 
-            <span className="text-xl font-extrabold text-slate-900">
-              Skool<span className="text-blue-600">ify</span>
+            <span className="text-xl font-extrabold text-[#0F172A]">
+              Skool<span className="text-[#FF6B5F]">ify</span>
             </span>
           </Link>
 
           <Link
             to="/admin-dashboard"
-            className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600"
+            className="flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-[#FF6B5F]"
           >
             <ArrowLeft size={17} />
             Back to Dashboard
@@ -56,11 +56,11 @@ function AdminProfile() {
       <main className="mx-auto max-w-4xl px-[5%] py-10">
 
         <div className="mb-8">
-          <p className="text-sm font-semibold text-blue-600">
+          <p className="text-sm font-semibold text-[#FF6B5F]">
             SCHOOL PROFILE
           </p>
 
-          <h1 className="mt-1 text-3xl font-extrabold text-slate-900">
+          <h1 className="mt-1 text-3xl font-extrabold text-[#0F172A]">
             School Profile
           </h1>
 
@@ -76,12 +76,12 @@ function AdminProfile() {
 
             <div className="flex items-center gap-3 border-b border-slate-100 pb-5">
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
                 <Building2 size={21} />
               </div>
 
               <div>
-                <h2 className="font-extrabold text-slate-900">
+                <h2 className="font-extrabold text-[#0F172A]">
                   School Information
                 </h2>
 
@@ -104,7 +104,7 @@ function AdminProfile() {
                   type="text"
                   value={schoolName}
                   onChange={(e) => setSchoolName(e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 outline-none transition focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FFE2DF]"
                   required
                 />
               </div>
@@ -125,7 +125,7 @@ function AdminProfile() {
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-4 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-4 outline-none transition focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FFE2DF]"
                     required
                   />
                 </div>
@@ -141,7 +141,7 @@ function AdminProfile() {
                   rows="4"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3.5 outline-none transition focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FFE2DF]"
                 />
               </div>
 
@@ -154,12 +154,12 @@ function AdminProfile() {
 
             <div className="flex items-center gap-3 border-b border-slate-100 pb-5">
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EE] text-[#FF6B5F]">
                 <Mail size={21} />
               </div>
 
               <div>
-                <h2 className="font-extrabold text-slate-900">
+                <h2 className="font-extrabold text-[#0F172A]">
                   Contact Information
                 </h2>
 
@@ -181,7 +181,7 @@ function AdminProfile() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3.5 outline-none transition focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FFE2DF]"
                   required
                 />
               </div>
@@ -202,7 +202,7 @@ function AdminProfile() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+254..."
-                    className="w-full rounded-xl border border-slate-200 py-3.5 pl-11 pr-4 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 py-3.5 pl-11 pr-4 outline-none transition focus:border-[#FF6B5F] focus:ring-2 focus:ring-[#FFE2DF]"
                   />
                 </div>
               </div>
@@ -211,12 +211,12 @@ function AdminProfile() {
 
           </section>
 
-          
+          {/* SAVE */}
           <div className="flex justify-end">
 
             <button
               type="submit"
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+              className="flex items-center gap-2 rounded-xl bg-[#FF6B5F] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#FF6B5F]/20 transition hover:bg-[#E85B50]"
             >
               <Save size={18} />
               Save Changes
