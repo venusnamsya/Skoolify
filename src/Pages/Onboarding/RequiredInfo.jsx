@@ -13,11 +13,11 @@ function RequiredInfo() {
       <div className="w-full max-w-2xl">
 
         <div className="text-center mb-8">
-          <div className="inline-flex w-12 h-12 bg-blue-600 text-white rounded-xl items-center justify-center font-bold text-xl mb-4">
+          <div className="inline-flex w-12 h-12 bg-[#F9736B] text-white rounded-xl items-center justify-center font-bold text-xl mb-4">
             S
           </div>
 
-          <p className="text-blue-600 font-semibold text-sm">
+          <p className="text-[#F9736B] font-semibold text-sm">
             STEP 1 OF 2
           </p>
 
@@ -45,7 +45,7 @@ function RequiredInfo() {
                 type="text"
                 placeholder="Enter ID number"
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B]"
               />
             </div>
 
@@ -58,7 +58,7 @@ function RequiredInfo() {
                 type="tel"
                 placeholder="+254 7XX XXX XXX"
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B]"
               />
             </div>
 
@@ -71,7 +71,7 @@ function RequiredInfo() {
                 type="text"
                 placeholder="Enter your physical address"
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B]"
               />
             </div>
 
@@ -84,7 +84,7 @@ function RequiredInfo() {
                 type="text"
                 placeholder="e.g. 00100"
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B]"
               />
             </div>
 
@@ -97,7 +97,7 @@ function RequiredInfo() {
                 type="text"
                 placeholder="e.g. Nairobi"
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B]"
               />
             </div>
 
@@ -108,7 +108,7 @@ function RequiredInfo() {
 
               <select
                 required
-                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#F9736B] bg-white"
               >
                 <option value="">Select your county</option>
                 <option>Nairobi</option>
@@ -127,7 +127,7 @@ function RequiredInfo() {
 
           <button
             type="submit"
-            className="w-full mt-7 bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-semibold transition"
+            className="w-full mt-7 bg-[#F9736B] hover:bg-[#E85D55] text-white py-3.5 rounded-xl font-semibold transition"
           >
             Continue →
           </button>

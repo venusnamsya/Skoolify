@@ -18,43 +18,62 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    if (loading) return;
+
     setError("");
     setLoading(true);
 
     try {
-      // 1. Login through Firebase Authentication
+      // 1. SIGN IN WITH FIREBASE AUTHENTICATION
       const userCredential = await signInWithEmailAndPassword(
         auth,
-        email,
+        email.trim(),
         password
       );
 
       const user = userCredential.user;
 
-      // 2. Get the user's information from Firestore
-      const userDoc = await getDoc(doc(db, "users", user.uid));
+      // 2. GET USER PROFILE FROM FIRESTORE
+      // We use a timeout so Firestore cannot keep the login
+      // process stuck forever.
+      let userData = null;
 
-      if (!userDoc.exists()) {
-        throw new Error("Your account information could not be found.");
+      try {
+        const userDocPromise = getDoc(
+          doc(db, "users", user.uid)
+        );
+
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(
+            () => reject(new Error("Firestore timeout")),
+            5000
+          )
+        );
+
+        const userDoc = await Promise.race([
+          userDocPromise,
+          timeoutPromise,
+        ]);
+
+        if (userDoc.exists()) {
+          userData = userDoc.data();
+        }
+      } catch (firestoreError) {
+        console.error(
+          "Could not load Firestore profile:",
+          firestoreError
+        );
       }
 
-      const userData = userDoc.data();
-
-      // 3. Check the account type
-      if (userData.role === "school") {
-        // School → Admin Dashboard
-        navigate("/admin-dashboard");
-      } else if (
-        userData.role === "parent" ||
-        userData.role === "student"
-      ) {
-        // Parent/Student → Main Dashboard
-        navigate("/dashboard");
+      // 3. GO TO CORRECT DASHBOARD
+      if (userData?.role === "school") {
+        navigate("/admin-dashboard", { replace: true });
       } else {
-        throw new Error("Account type not recognised.");
+        navigate("/dashboard", { replace: true });
       }
+
     } catch (err) {
-      console.error("Login error:", err);
+      console.error("LOGIN ERROR:", err);
 
       if (err.code === "auth/invalid-credential") {
         setError("Incorrect email or password.");
@@ -62,8 +81,25 @@ function Login() {
         setError("No account was found with this email.");
       } else if (err.code === "auth/wrong-password") {
         setError("Incorrect password.");
+      } else if (err.code === "auth/invalid-email") {
+        setError("Please enter a valid email address.");
+      } else if (err.code === "auth/too-many-requests") {
+        setError(
+          "Too many login attempts. Please wait a moment and try again."
+        );
+      } else if (err.code === "auth/network-request-failed") {
+        setError(
+          "Network error. Please check your internet connection."
+        );
+      } else if (err.code === "permission-denied") {
+        setError(
+          "Firebase denied access to your account information."
+        );
       } else {
-        setError(err.message || "Something went wrong. Please try again.");
+        setError(
+          err.message ||
+            "Something went wrong. Please try again."
+        );
       }
     } finally {
       setLoading(false);
@@ -82,8 +118,10 @@ function Login() {
 
         <div className="relative z-10 flex flex-col justify-between w-full">
 
-          <Link to="/" className="flex items-center gap-3">
-
+          <Link
+            to="/"
+            className="flex items-center gap-3"
+          >
             <div className="w-11 h-11 rounded-xl bg-white text-[#E76F51] flex items-center justify-center font-bold text-xl">
               S
             </div>
@@ -91,18 +129,16 @@ function Login() {
             <span className="text-2xl font-bold">
               Skool<span className="text-[#E76F51]">ify</span>
             </span>
-
           </Link>
-            <button
-             type="button"
-               onClick={() => navigate("/landing-page")}
-                 className="mb-6 flex items-center gap-2 text-sm font-semibold text-[#172554] transition-colors duration-200 hover:text-[#F47C68]"
-            >
-                    <span className="text-lg">←</span>
-                 Back to Home
-            </button>
-          
-          
+
+          <button
+            type="button"
+            onClick={() => navigate("/landing-page")}
+            className="mb-6 flex items-center gap-2 text-sm font-semibold text-white transition-colors duration-200 hover:text-[#F47C68]"
+          >
+            <span className="text-lg">←</span>
+            Back to Home
+          </button>
 
           <div className="max-w-lg">
 
@@ -138,13 +174,11 @@ function Login() {
             to="/"
             className="lg:hidden flex items-center gap-2 mb-12 text-xl font-bold text-slate-800"
           >
-
             <span className="w-9 h-9 bg-[#E76F51] text-white rounded-lg flex items-center justify-center">
               S
             </span>
 
             Skool<span className="text-[#E76F51]">ify</span>
-
           </Link>
 
           {/* HEADING */}
@@ -164,7 +198,7 @@ function Login() {
 
           </div>
 
-          {/* ERROR MESSAGE */}
+          {/* ERROR */}
           {error && (
             <div className="mb-5 rounded-xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">
               {error}
@@ -172,7 +206,10 @@ function Login() {
           )}
 
           {/* FORM */}
-          <form onSubmit={handleLogin} className="space-y-5">
+          <form
+            onSubmit={handleLogin}
+            className="space-y-5"
+          >
 
             {/* EMAIL */}
             <div>
@@ -185,9 +222,12 @@ function Login() {
                 type="email"
                 placeholder="you@example.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) =>
+                  setEmail(e.target.value)
+                }
                 required
-                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white"
+                disabled={loading}
+                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white disabled:bg-slate-100"
               />
 
             </div>
@@ -214,9 +254,12 @@ function Login() {
                 type="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
                 required
-                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white"
+                disabled={loading}
+                className="w-full px-4 py-3.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#E76F51] focus:border-transparent bg-white disabled:bg-slate-100"
               />
 
             </div>
@@ -239,7 +282,9 @@ function Login() {
               disabled={loading}
               className="w-full bg-[#E76F51] hover:bg-[#d95f43] disabled:bg-[#e99a87] text-white py-3.5 rounded-xl font-semibold transition"
             >
-              {loading ? "Signing in..." : "Sign In →"}
+              {loading
+                ? "Signing in..."
+                : "Sign In →"}
             </button>
 
           </form>

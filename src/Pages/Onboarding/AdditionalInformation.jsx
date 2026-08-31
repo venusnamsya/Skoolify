@@ -45,7 +45,7 @@ function AdditionalInfo() {
             </div>
 
             <span className="text-xl font-extrabold text-[#0F172A]">
-              Skool<span className="text-[#FF6B5F]">ify</span>
+              Skool<span className="text-[#F9736B]">ify</span>
             </span>
           </div>
 
@@ -56,12 +56,12 @@ function AdditionalInfo() {
 
         {/* PROGRESS */}
         <div className="mb-8 h-2 overflow-hidden rounded-full bg-slate-200">
-          <div className="h-full w-full rounded-full bg-[#FF6B5F]" />
+          <div className="h-full w-full rounded-full bg-[#F9736B]" />
         </div>
 
         {/* HEADING */}
         <div className="mb-8">
-          <p className="text-xs font-extrabold tracking-[1.5px] text-[#FF6B5F]">
+          <p className="text-xs font-extrabold tracking-[1.5px] text-[#F9736B]">
             ALMOST THERE
           </p>
 
@@ -92,7 +92,7 @@ function AdditionalInfo() {
               name="schoolLevel"
               value={formData.schoolLevel}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#F9736B] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
             >
               <option value="">Select an option</option>
               <option value="primary">Primary School</option>
@@ -120,7 +120,7 @@ function AdditionalInfo() {
                 value={formData.preferredLocation}
                 onChange={handleChange}
                 placeholder="e.g. Nairobi, Mombasa, Kisumu..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-[#F9736B] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
               />
             </div>
 
@@ -149,8 +149,8 @@ function AdditionalInfo() {
                     }
                     className={`rounded-xl border px-3 py-3 text-sm font-semibold transition ${
                       formData.schoolType === type
-                        ? "border-[#FF6B5F] bg-[#FFF0EE] text-[#FF6B5F] ring-1 ring-[#FF6B5F]"
-                        : "border-slate-200 bg-white text-slate-600 hover:border-[#FFB8B1]"
+                        ? "border-[#F9736B] bg-[#FFF1EF] text-[#F9736B] ring-1 ring-[#F9736B]"
+                        : "border-slate-200 bg-white text-slate-600 hover:border-[#FBC4BF]"
                     }`}
                   >
                     {type}
@@ -175,7 +175,7 @@ function AdditionalInfo() {
               onChange={handleChange}
               rows="4"
               placeholder="Tell us about your interests, preferred courses, special requirements..."
-              className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#FF6B5F] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
+              className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#F9736B] focus:bg-white focus:ring-2 focus:ring-[#FFE2DF]"
             />
           </div>
 
@@ -192,7 +192,7 @@ function AdditionalInfo() {
 
             <button
               type="submit"
-              className="rounded-xl bg-[#FF6B5F] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#FF6B5F]/20 transition hover:-translate-y-0.5 hover:bg-[#E85A50]"
+              className="rounded-xl bg-[#F9736B] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#F9736B]/20 transition hover:-translate-y-0.5 hover:bg-[#E85D55]"
             >
               Continue to Dashboard →
             </button>

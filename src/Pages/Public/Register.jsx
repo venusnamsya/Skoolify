@@ -29,47 +29,51 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    if (loading) return;
+
     setError("");
     setLoading(true);
 
     try {
-      // Create Firebase Authentication account
+      // CREATE FIREBASE AUTH ACCOUNT
       const userCredential = await createUserWithEmailAndPassword(
         auth,
-        email,
+        email.trim(),
         password
       );
 
       const user = userCredential.user;
 
-      // Data saved to Firestore
+      // USER DATA
       const userData =
         accountType === "school"
           ? {
               uid: user.uid,
-              institutionName: institutionName,
-              email: email,
+              institutionName: institutionName.trim(),
+              email: email.trim(),
               role: "school",
-              createdAt: new Date(),
+              createdAt: new Date().toISOString(),
             }
           : {
               uid: user.uid,
-              firstName: firstName,
-              lastName: lastName,
-              email: email,
+              firstName: firstName.trim(),
+              lastName: lastName.trim(),
+              email: email.trim(),
               role: "parent",
-              createdAt: new Date(),
+              createdAt: new Date().toISOString(),
             };
 
-      // Save user profile
-      await setDoc(doc(db, "users", user.uid), userData);
+      // SAVE USER PROFILE TO FIRESTORE
+      // This runs without blocking navigation.
+      setDoc(doc(db, "users", user.uid), userData).catch(
+        (firestoreError) => {
+          console.error("Firestore error:", firestoreError);
+        }
+      );
 
-      // Send to correct dashboard
-      if (accountType === "school") {
-        navigate("/admin-dashboard");
-      } else {
-        navigate("/dashboard");
-      }
+      // GO TO CORRECT DASHBOARD
+      navigate("/onboarding/required");
+      
     } catch (error) {
       console.error("Registration error:", error);
 
@@ -79,12 +83,12 @@ function Register() {
         setError("Password should be at least 6 characters.");
       } else if (error.code === "auth/invalid-email") {
         setError("Please enter a valid email address.");
-      } else if (error.code === "permission-denied") {
-        setError(
-          "Account created, but your profile could not be saved. Check Firestore permissions."
-        );
+      } else if (error.code === "auth/network-request-failed") {
+        setError("Network error. Please check your internet connection.");
       } else {
-        setError(error.message || "Something went wrong. Please try again.");
+        setError(
+          error.message || "Something went wrong. Please try again."
+        );
       }
     } finally {
       setLoading(false);
@@ -95,7 +99,6 @@ function Register() {
     setAccountType(type);
     setError("");
 
-    // Clear the fields that don't belong to the selected account
     setFirstName("");
     setLastName("");
     setInstitutionName("");
@@ -105,9 +108,10 @@ function Register() {
     <div className="min-h-screen bg-slate-50 flex">
 
       {/* LEFT PANEL */}
-      <div className="hidden lg:flex lg:w-[42%] bg-[#172554] text-white p-12">
+      <div className="hidden lg:flex lg:w-[42%] bg-[#0F172A] text-white p-12">
         <div className="flex flex-col justify-between w-full">
 
+          {/* LOGO */}
           <Link to="/" className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-xl bg-[#F9736B] flex items-center justify-center">
               <School size={23} />
@@ -117,16 +121,8 @@ function Register() {
               Skool<span className="text-[#F9736B]">ify</span>
             </span>
           </Link>
-          
-           <button
-             type="button"
-               onClick={() => navigate("/landing-page")}
-                 className="mb-6 flex items-center gap-2 text-sm font-semibold text-[#172554] transition-colors duration-200 hover:text-[#F47C68]"
-            >
-                    <span className="text-lg">←</span>
-                 Back to Home
-            </button>
 
+          {/* CONTENT */}
           <div>
 
             <div className="w-16 h-16 bg-[#F9736B] rounded-2xl flex items-center justify-center mb-8">
@@ -169,13 +165,13 @@ function Register() {
           </div>
 
           <p className="text-slate-500 text-sm">
-            Skoolify ©️ 2026
+            Skoolify © 2026
           </p>
 
         </div>
       </div>
 
-      {/* FORM */}
+      {/* FORM SIDE */}
       <div className="w-full lg:w-[58%] flex items-center justify-center p-6 sm:p-12">
 
         <div className="w-full max-w-xl">
@@ -192,6 +188,7 @@ function Register() {
             Skool<span className="text-[#F9736B]">ify</span>
           </Link>
 
+          {/* HEADING */}
           <div className="mb-8">
 
             <p className="text-[#F9736B] font-semibold text-sm mb-2">
@@ -208,6 +205,7 @@ function Register() {
 
           </div>
 
+          {/* FORM */}
           <form onSubmit={handleRegister} className="space-y-5">
 
             {/* ACCOUNT TYPE */}
@@ -399,7 +397,7 @@ function Register() {
               </div>
             )}
 
-            {/* BUTTON */}
+            {/* CREATE ACCOUNT */}
             <button
               type="submit"
               disabled={loading}
@@ -410,6 +408,7 @@ function Register() {
 
           </form>
 
+          {/* LOGIN */}
           <p className="text-center text-sm text-slate-600 mt-7">
 
             Already have an account?{" "}
